@@ -1,13 +1,6 @@
 server:
   port: 8888
 spring:
-  # rabbitmq 配置
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
-    virtual-host: /
 
   application:
     name: configmodel
@@ -35,6 +28,11 @@ spring:
         healthCheckInterval: 5s
         instanceId: ${spring.application.name}:${spring.cloud.consul.host}
 
+    # kafka测试环境
+    stream:
+      kafka:
+        binder:
+          brokers: 172.19.79.1:6667,172.19.79.2:6667,172.19.79.3:6667
 management:
   endpoint:
     bus-refresh:

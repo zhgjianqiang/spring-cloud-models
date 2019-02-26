@@ -6,12 +6,6 @@ feign:
     enabled: true
 
 spring:
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
-    virtual-host: /
   cloud:
     #消息总线配置
     bus:
@@ -21,7 +15,13 @@ spring:
       refresh:
         enabled: true  #开启总线消息更新功能
 
+    # kafka测试环境
+    stream:
+      kafka:
+        binder:
+          brokers: 172.19.79.1:6667,172.19.79.2:6667,172.19.79.3:6667
+
 management.endpoint.bus-refresh.enabled: true
-management.endpoints.web.exposure.include: bus-refresh
+management.endpoints.web.exposure.include: info, health, loggers, logfile, configprops, bus-refresh
 
 name: "测试一下"

@@ -11,7 +11,7 @@ spring:
       port: 8500
       discovery:
         tags: version=1.0
-        #        healthCheckPath: /health
+        #        healthCheckPath: /actuator/health
         healthCheckInterval: 5s
         instanceId: ${spring.application.name}:${spring.cloud.consul.host}
 
