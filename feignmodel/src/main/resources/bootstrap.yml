@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: feignmodel
+  cloud:
+    config:
+      profile: dev
+      uri: http://localhost:8888/
+
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 2
+        sleepWindowInMilliseconds: 5000

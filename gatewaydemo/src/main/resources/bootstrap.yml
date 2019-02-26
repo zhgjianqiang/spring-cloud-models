@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      profile: dev
+      uri: http://localhost:8888/
+
+

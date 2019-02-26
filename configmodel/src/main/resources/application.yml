@@ -1,0 +1,47 @@
+server:
+  port: 8888
+spring:
+  # rabbitmq 配置
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+  application:
+    name: configmodel
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/
+    #消息总线配置
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+      refresh:
+        enabled: true  #开启总线消息更新功能
+
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        tags: version=1.0
+        #        healthCheckPath: /health
+        healthCheckInterval: 5s
+        instanceId: ${spring.application.name}:${spring.cloud.consul.host}
+
+management:
+  endpoint:
+    bus-refresh:
+      enabled: true
+    refresh:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'

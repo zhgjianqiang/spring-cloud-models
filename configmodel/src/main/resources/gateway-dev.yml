@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: host_route
+          uri: http://localhost:8880
+          predicates:
+            - Path=/feign/**
+          filters:
+            - StripPrefix=1
+        # 配置中心
+        - id: host_route
+          uri: http://localhost:8888
+          predicates:
+            - Path=/config/**
+          filters:
+            - StripPrefix=1
+
+        - id: host_route
+          uri: http://localhost:8081
+          predicates:
+            - Path=/1/**
+          filters:
+            - StripPrefix=1
+        - id: host_route
+          uri: http://localhost:8082
+          predicates:
+            - Path=/2/**
+          filters:
+            - StripPrefix=1
+
+server:
+  port: 8080
