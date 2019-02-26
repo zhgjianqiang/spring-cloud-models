@@ -27,7 +27,7 @@ spring:
         enabled: true  #开启总线消息更新功能
 
     consul:
-      host: 127.0.0.1
+      host: 172.19.79.5
       port: 8500
       discovery:
         tags: version=1.0

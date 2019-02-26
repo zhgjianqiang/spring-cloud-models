@@ -21,9 +21,6 @@ spring:
       refresh:
         enabled: true  #开启总线消息更新功能
 
-
-
-
 management.endpoint.bus-refresh.enabled: true
 management.endpoints.web.exposure.include: bus-refresh
 
