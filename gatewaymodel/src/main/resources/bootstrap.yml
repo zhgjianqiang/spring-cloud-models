@@ -1,11 +1,11 @@
 spring:
   application:
     name: gateway
+  profiles:
+    active: dev
   cloud:
     config:
-      profile: dev
       uri: http://localhost:8888/
-
     consul:
       host: 172.19.79.5
       port: 8500
@@ -13,4 +13,4 @@ spring:
         tags: version=1.0
         #        healthCheckPath: /health
         healthCheckInterval: 5s
-        instanceId: ${spring.application.name}:${spring.cloud.consul.host}
+        instanceId: ${spring.application.name}:${spring.cloud.consul.host}:${server.port}

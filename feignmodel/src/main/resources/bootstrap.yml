@@ -1,9 +1,10 @@
 spring:
   application:
     name: feignmodel
+  profiles:
+    active: dev
   cloud:
     config:
-      profile: dev
       uri: http://localhost:8888/
 
     consul:
@@ -13,7 +14,7 @@ spring:
         tags: version=1.0
         #        healthCheckPath: /actuator/health
         healthCheckInterval: 5s
-        instanceId: ${spring.application.name}:${spring.cloud.consul.host}
+        instanceId: ${spring.application.name}:${spring.cloud.consul.host}:${server.port}
 
 hystrix:
   command:

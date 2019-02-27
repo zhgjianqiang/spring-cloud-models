@@ -13,7 +13,7 @@ spring:
         tags: version=1.0
         #        healthCheckPath: /health
         healthCheckInterval: 5s
-        instanceId: ${spring.application.name}:${spring.cloud.consul.host}
+        instanceId: ${spring.application.name}:${spring.cloud.consul.host}:${server.port}
 
 server:
   port: 8081

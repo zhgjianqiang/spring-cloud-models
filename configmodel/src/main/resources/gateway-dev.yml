@@ -29,5 +29,11 @@ spring:
           filters:
             - StripPrefix=1
 
+    # kafka测试环境
+    stream:
+      kafka:
+        binder:
+          brokers: 172.19.79.1:6667,172.19.79.2:6667,172.19.79.3:6667
+
 server:
   port: 8080

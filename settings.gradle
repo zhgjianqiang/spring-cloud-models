@@ -1,0 +1,6 @@
+rootProject.name = 'spring-cloud-model'
+include 'configmodel'
+include 'gatewaymodel'
+include 'feignmodel'
+include 'hellodemo'
+include 'hellodemo2'

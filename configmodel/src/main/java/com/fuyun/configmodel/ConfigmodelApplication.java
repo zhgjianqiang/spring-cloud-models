@@ -6,7 +6,9 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
 @SpringBootApplication
+//配置中心
 @EnableConfigServer
+//动态刷新
 @RefreshScope
 public class ConfigmodelApplication {
 

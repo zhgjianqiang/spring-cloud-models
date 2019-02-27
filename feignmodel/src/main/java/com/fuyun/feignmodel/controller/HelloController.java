@@ -25,12 +25,12 @@ public class HelloController {
     @Resource
     HelloFeignClient helloFeignClient;
 
-    @GetMapping("f-hello")
+    @GetMapping("/f-hello")
     public String getHello() {
         return helloFeignClient.getHello() + ", name=" + name;
     }
 
-    @GetMapping("f-error")
+    @GetMapping("/f-error")
     @HystrixCommand(fallbackMethod = "fallbackError")
     public String getError() {
         return helloFeignClient.getError();
