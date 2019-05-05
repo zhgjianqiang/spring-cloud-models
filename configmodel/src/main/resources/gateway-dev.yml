@@ -37,3 +37,23 @@ spring:
 
 server:
   port: 8080
+
+request-modify:
+  parametersMap:
+    client:
+      seer: fuyun2019
+      testclient: fuyun2019
+  modifyList:
+    - routeId: baize-server
+      httpMethod: POST
+      paths: /oauth/token,/baize/oauth/token
+      addValue:
+        client_secret:
+          #这里的client对应parametersMap中的client, client_id即根据已有参数获取值的key
+          client: client_id
+    - routeId: baize-server
+      httpMethod: POST
+      paths: /appcerts,/appcerts/password,/baize/appcerts,/baize/appcerts/password
+      addValue:
+        clientSecret:
+          client: clientId

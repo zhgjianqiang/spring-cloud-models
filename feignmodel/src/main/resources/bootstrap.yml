@@ -8,8 +8,8 @@ spring:
       uri: http://localhost:8888/
 
     consul:
-      host: 172.19.79.5
-      port: 8500
+      host: 172.19.79.4
+      port: 32559
       discovery:
         tags: version=1.0
         #        healthCheckPath: /actuator/health
@@ -20,5 +20,5 @@ hystrix:
   command:
     default:
       circuitBreaker:
-        requestVolumeThreshold: 2
+        requestVolumeThreshold: 5
         sleepWindowInMilliseconds: 5000
